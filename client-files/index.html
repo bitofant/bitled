@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="socket.io/socket.io.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>PiensLED</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		
+		<div data-role="page" data-theme="b" id="start">
+			<div data-role="header">
+				<h1>PiensLED</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#setall" data-transition="flow">Farbe ändern</a></li>
+					<li><a href="#exanims" data-transition="flow">Animationen</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div data-role="page" data-theme="b" id="setall">
+			<div data-role="header">
+				<h1>Alle Farben</h1>
+				<a href="#" data-rel="back" data-transition="flow" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Zurück</a>
+			</div>
+			<div data-role="main" class="ui-content">
+				<label for="setall-r">Input slider:</label>
+				<input type="range" name="setall-r" id="setall-r" value="0" min="0" max="255" step="1" />
+				
+				<label for="setall-g">Input slider:</label>
+				<input type="range" name="setall-g" id="setall-g" value="0" min="0" max="255" step="1" />
+				
+				<label for="setall-b">Input slider:</label>
+				<input type="range" name="setall-b" id="setall-b" value="0" min="0" max="255" step="1" />
+			</div>
+		</div>
+		
+		<div data-role="page" data-theme="b" id="exanims">
+			<div data-role="header">
+				<h1>Animationen</h1>
+				<a href="#" data-rel="back" data-transition="flow" data-direction="reverse" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">Zurück</a>
+			</div>
+			<div data-role="main" class="ui-content">
+				<ul data-role="listview" data-inset="true">
+					<li><a href="javascript:exanims.farbwechsel()" data-transition="flow" id="axanim1">Farbwechsel</a></li>
+					<li><a href="javascript:exanims.rennlicht()" data-transition="flow" id="axanim2">Rennlicht</a></li>
+					<li><a href="javascript:exanims.regenbogen()" data-transition="flow" id="axanim3">Regenbogen</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<script language="JavaScript" type="text/javascript" src="java.js"></script>
+	</body>
+</html>
